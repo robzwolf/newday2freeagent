@@ -1,4 +1,4 @@
-# starling2freeagent
+# newday2freeagent
 Convert NewDay CSV format to be imported by FreeAgent 
 
 

@@ -9,9 +9,20 @@ def convertCSV(filename):
         rdr = csv.reader(source)
         wtr = csv.writer(result, delimiter=',', )
         next(rdr)  # Skip CSV headers
-        next(rdr)  # Skip "Opening balance."
         for row in rdr:
-            wtr.writerow([row[0], row[4], row[2]])
+            if (row[0] == "Pending"):
+                continue
+            
+            date = row[0]
+            amount = row[2]
+            description = row[1]
+
+            if (amount[0] != "-"):
+                amount = f"-{amount}"
+            else:
+                amount = amount[1:]
+
+            wtr.writerow([date, amount, description])
 
 def main(argv):
     convertCSV(argv[0])

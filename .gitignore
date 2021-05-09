@@ -105,3 +105,6 @@ venv.bak/
 
 # any csv files
 *.csv
+
+# macOS-specific file
+.DS_Store
